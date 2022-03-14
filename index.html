@@ -4,10 +4,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Summary</title>
+    <link  rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Document</title>
 </head>
 <body>
-    <div></div> <!--Use this div for the Order Table-->
-    <div></div> <!--Use this div for the Payment Table-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-xl-8 left_div">
+               <div class="row">
+                   <div class="col-xl-11 fw-bold py-2">
+                       <p class="fs-4 pt-4" style="line-height: 1px;">Your Orders</p>
+                   </div>
+                   <!-- <div class="col-xl-2 pt-3">
+                       <div style="text-align: center;" onclick="addrow()">
+                           <img src="plus.png" width="35%" height="auto">
+                       </div>
+                   </div>
+                   <div class="col-xl-2 pt-3">
+                    <div onclick="deleterow()">
+                        <img src="delete.png" width="35%" height="auto">
+                    </div>
+                </div> -->
+               </div>
+               <hr style="height: 2px;">  
+               <div id="rowdiv">
+                <div class="row bg-light p-2 mx-2 box_radius mt-2" >
+                    <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                        <div>
+                            <p class="text-center fw-bold pt-1" style="line-height: 9px; font-size: 16px;">Item</p>
+                        </div>
+                        <div>
+                            <input class="px-1" type="text" style="width: 97%;" id="itemname" onm>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                     <div>
+                         <p class="text-center fw-bold pt-1"
+                         style="line-height: 9px; font-size: 16px;">Seller Name</p>
+                     </div>
+                     <div>
+                         <input class="px-1" type="text" style="width: 97%;" id="sellername">
+                     </div>
+                 </div>
+                 <!-- <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                     <div>
+                         <p class="text-center fw-bold pt-1" style="line-height: 9px; font-size: 16px;">Time</p>
+                     </div>
+                     <div>
+                         <input type="text" style="width: 97%;" id="time">
+                     </div>
+                 </div> -->
+                 <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                     <div>
+                         <p class="text-center fw-bold pt-1" style="line-height: 9px; font-size: 16px;">Qty.</p>
+                     </div>
+                     <div>
+                         <input class="px-1" type="text" style="width: 97%;" id="quantity">
+                     </div>
+                 </div>
+                 <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                     <div>
+                         <p class="text-center fw-bold pt-1" style="line-height: 9px; font-size: 16px;">Rs./Qty.</p>
+                     </div>
+                     <div>
+                         <input class="px-1" type="text" style="width: 97%;" id="perquan">
+                     </div>
+                 </div>
+                 <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                     <div>
+                         <p class="text-center fw-bold pt-1"
+                         style="line-height: 9px; font-size: 16px;">Amount</p>
+                     </div>
+                     <div>
+                         <input class="px-1" type="text" style="width: 97%;" id="amnt" onmousedown="calamount()" onkeyup="calamount()">
+                     </div>
+                 </div>
+                </div> 
+               </div>
+               <div class="row mt-3" style="float: right;">
+                        <div class="col-xl-10">
+                            <button class="btn btn-primary fw-bold fs-5 px-4" onclick="savedetails()">Save</button>
+                        </div>
+               </div>
+                
+            </div>
+            <div class="col-xl-3 p-4 right_div mx-4">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p id="timeshow"></p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-xl-12">
+                        <button class="btn btn-success" style="width: 100%; font-size: 17px; border: none;"    id="btn" onclick="setTimeIn()">Clock In</button>
+                    </div>
+                </div>
+                <div class="row my-4 bg-light p-1 box_radius">
+                    <div class="col-xl-12 pt-3">
+                        <p class="fw-bold">Date <span  class="ps-4 fw-normal" id="date"></span></p>
+                    </div>
+                </div>
+                <div class="row my-4 bg-light p-1 box_radius">
+                    <div class="col-xl-6 pt-3 ">
+                        <p class="fw-bold">Total Amount</p>
+                    </div>
+                    <div class="col-xl-5 pt-2">
+                        <!-- <p>Total Amount</p> -->
+                        <input type="text" class="modify" style="width: 100%;" valude="0">
+                    </div>
+                </div>
+                <div class="row my-4 bg-light p-1 box_radius">
+                    <div class="col-xl-8 pt-3">
+                        <p class="fw-bold">Remaining Amount</p>
+                    </div>
+                    <div class="col-xl-4 pt-2">
+                        <!-- <p>Total Amount</p> -->
+                        <!-- <input type="text" class="modify" style="width: 100%; background-color: ghostwhite;"> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- <input class="mt-5 modify" onmousedown="mouse()" id="input1"> -->
+    </div>
+    <!-- <textarea cols="40" rows="20" onmouseover="mousover()" onm></textarea> -->
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
