@@ -1,5 +1,6 @@
 const d = new Date();
 
+
 let getDate = document.getElementById("date");
 let btn1 = document.getElementById("btn");
 let getitemname = document.getElementById("itemname");
@@ -151,3 +152,4 @@ function populatingPayment() {
   var amount = document.getElementById("p_amount");
   amount.innerHTML = getquan.value * getperquan.value;
 }
+
