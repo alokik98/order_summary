@@ -1,5 +1,6 @@
 const d = new Date();
 
+
 let getDate = document.getElementById("date");
 let btn1 = document.getElementById("btn");
 let getitemname = document.getElementById("itemname");
@@ -143,3 +144,4 @@ function savePaymentDetails() {
   console.log(time.value);
   console.log(totalAmount.value);
 }
+
