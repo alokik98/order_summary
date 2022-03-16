@@ -206,7 +206,7 @@
     <div class="container mt-5 payment">
       <!--Payment starts here-->
       <div class="row">
-        <div class="col-xl-8 left-div">
+        <div class="col-xl-8 left_div">
           <div class="row">
             <div class="col-xl-11 fw-bold py-2">
               <p class="fs-4 pt-4" style="line-height: 1px">Payments</p>
@@ -224,11 +224,11 @@
                     Item
                   </p>
                 </div>
-                <div
+                <input
                   class="px-1 text-center"
                   style="width: 97%"
                   id="p_itemname"
-                ></div>
+                />
               </div>
               <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
                 <div>
@@ -240,11 +240,11 @@
                   </p>
                 </div>
                 <div>
-                  <div
+                  <input
                     class="px-1 text-center"
                     style="width: 97%"
                     id="p_date"
-                  ></div>
+                  />
                 </div>
               </div>
               <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
@@ -257,11 +257,11 @@
                   </p>
                 </div>
                 <div>
-                  <div
+                  <input
                     class="px-1 text-center"
                     style="width: 97%"
                     id="p_time"
-                  ></div>
+                  />
                 </div>
               </div>
               <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
@@ -274,13 +274,23 @@
                   </p>
                 </div>
                 <div>
-                  <div
+                  <input
                     class="px-1 text-center"
                     style="width: 97%"
                     id="p_amount"
-                  ></div>
+                  />
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="row mt-3 mb-3" style="float: right">
+            <div class="col-xl-10">
+              <button
+                class="btn btn-primary fw-bold fs-5 px-4"
+                onclick="savePaymentDetails()"
+              >
+                Save
+              </button>
             </div>
           </div>
         </div>

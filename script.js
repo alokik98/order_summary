@@ -112,7 +112,6 @@ function savedetails() {
   console.log(getquan.value);
   console.log(getperquan.value);
   createTable();
-  populatingPayment();
   getitemname.value = "";
   getseller.value = "";
   getquan.value = "";
@@ -134,20 +133,13 @@ function mousover() {
   console.log("mouse over");
 }
 
-function populatingPayment() {
+function savePaymentDetails() {
   var item = document.getElementById("p_itemname");
-  item.innerHTML = getitemname.value;
-  // console.log(getitemname.value);
-  // console.log(typeof item);
-
   var date = document.getElementById("p_date");
-  date.innerHTML = getDate.innerText;
-
   var time = document.getElementById("p_time");
-  var minutes = d.getMinutes();
-  minutes = minutes > 9 ? minutes : "0" + minutes;
-  time.innerHTML = d.getHours() + ":" + minutes + ":" + d.getSeconds();
-
-  var amount = document.getElementById("p_amount");
-  amount.innerHTML = getquan.value * getperquan.value;
+  var totalAmount = document.getElementById("p_amount");
+  console.log(item.value);
+  console.log(date.value);
+  console.log(time.value);
+  console.log(totalAmount.value);
 }
