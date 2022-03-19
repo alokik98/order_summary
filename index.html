@@ -205,93 +205,110 @@
     <!-- <textarea cols="40" rows="20" onmouseover="mousover()" onm></textarea> -->
     <div class="container mt-5 payment">
       <!--Payment starts here-->
-      <div class="row">
-        <div class="col-xl-8 left_div">
-          <div class="row">
-            <div class="col-xl-11 fw-bold py-2">
-              <p class="fs-4 pt-4" style="line-height: 1px">Payments</p>
+      <div class="row left_div">
+        <!-- <div class="left_div"> -->
+          <div class="col-xl-8">
+            <div class="row">
+              <div class="col-xl-11 fw-bold py-2">
+                <p class="fs-4 mt-4">Payments</p>
+              </div>
+            </div>
+            <hr style="height: 2px" />
+            <div class="" id="rowdiv">
+              <div class="row bg-light p-2 mx-2 box_radius mt-2">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                  <div>
+                    <p
+                      class="text-center fw-bold pt-1"
+                      style="line-height: 9px; font-size: 16px"
+                    >
+                      Item
+                    </p>
+                  </div>
+                  <input
+                    class="px-1 text-center"
+                    style="width: 100%"
+                    id="p_itemname"
+                  />
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                  <div>
+                    <p
+                      class="text-center fw-bold pt-1"
+                      style="line-height: 9px; font-size: 16px"
+                    >
+                      Date
+                    </p>
+                  </div>
+                  <div>
+                    <input
+                      type="date"
+                      class="px-1 text-center"
+                      style="width: 100%"
+                      id="p_date"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                  <div>
+                    <p
+                      class="text-center fw-bold pt-1"
+                      style="line-height: 9px; font-size: 16px"
+                    >
+                      Time
+                    </p>
+                  </div>
+                  <div>
+                    <input
+                      type="time"
+                      class="px-1 text-center"
+                      style="width: 100%"
+                      id="p_time"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                  <div>
+                    <p
+                      class="text-center fw-bold pt-1"
+                      style="line-height: 9px; font-size: 16px"
+                    >
+                      Total Amount
+                    </p>
+                  </div>
+                  <div>
+                    <input
+                      class="px-1 text-center"
+                      style="width: 100%"
+                      id="p_amount"
+                      type="number"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3 mb-3" style="float: right">
+              <div class="col-xl-10">
+                <button
+                  class="btn btn-primary fw-bold fs-5 px-4"
+                  onclick="savePaymentDetails()"
+                >
+                  Save
+                </button>
+              </div>
             </div>
           </div>
-          <hr style="height: 2px" />
-          <div class="" id="rowdiv">
-            <div class="row bg-light p-2 mx-2 box_radius mt-2">
-              <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
-                <div>
-                  <p
-                    class="text-center fw-bold pt-1"
-                    style="line-height: 9px; font-size: 16px"
-                  >
-                    Item
-                  </p>
-                </div>
-                <input
-                  class="px-1 text-center"
-                  style="width: 97%"
-                  id="p_itemname"
-                />
-              </div>
-              <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
-                <div>
-                  <p
-                    class="text-center fw-bold pt-1"
-                    style="line-height: 9px; font-size: 16px"
-                  >
-                    Date
-                  </p>
-                </div>
-                <div>
-                  <input
-                    class="px-1 text-center"
-                    style="width: 97%"
-                    id="p_date"
-                  />
-                </div>
-              </div>
-              <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
-                <div>
-                  <p
-                    class="text-center fw-bold pt-1"
-                    style="line-height: 9px; font-size: 16px"
-                  >
-                    Time
-                  </p>
-                </div>
-                <div>
-                  <input
-                    class="px-1 text-center"
-                    style="width: 97%"
-                    id="p_time"
-                  />
-                </div>
-              </div>
-              <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
-                <div>
-                  <p
-                    class="text-center fw-bold pt-1"
-                    style="line-height: 9px; font-size: 16px"
-                  >
-                    Total Amount
-                  </p>
-                </div>
-                <div>
-                  <input
-                    class="px-1 text-center"
-                    style="width: 97%"
-                    id="p_amount"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3" style="float: right">
-            <div class="col-xl-10">
-              <button
-                class="btn btn-primary fw-bold fs-5 px-4"
-                onclick="savePaymentDetails()"
-              >
-                Save
-              </button>
-            </div>
+          <div id="tableDiv" style="display: none" class="col-xl-8">
+            <table class="table">
+              <tbody id="table_body">
+                <tr>
+                  <th>Item</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Total Amount</th>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

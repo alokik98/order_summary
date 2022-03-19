@@ -1,6 +1,5 @@
 const d = new Date();
 
-
 let getDate = document.getElementById("date");
 let btn1 = document.getElementById("btn");
 let getitemname = document.getElementById("itemname");
@@ -139,9 +138,23 @@ function savePaymentDetails() {
   var date = document.getElementById("p_date");
   var time = document.getElementById("p_time");
   var totalAmount = document.getElementById("p_amount");
-  console.log(item.value);
-  console.log(date.value);
-  console.log(time.value);
-  console.log(totalAmount.value);
+  generatingPaymentTable(item, date, time, totalAmount);
 }
+const generatingPaymentTable = (item, date, time, totalAmount) => {
+  // console.log("Trying Arrow Functions");
+  var t = document.getElementById("tableDiv");
+  t.style.display = "block";
 
+  var t_body = document.getElementById("table_body");
+
+  var template = `
+                <tr>
+                    <td>${item.value}</td>
+                    <td>${date.value}</td>
+                    <td>${time.value}</td>
+                    <td>${totalAmount.value}</td>
+                </tr>
+  `;
+
+  t_body.innerHTML += template;
+};
