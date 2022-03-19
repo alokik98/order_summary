@@ -138,7 +138,17 @@ function savePaymentDetails() {
   var date = document.getElementById("p_date");
   var time = document.getElementById("p_time");
   var totalAmount = document.getElementById("p_amount");
-  generatingPaymentTable(item, date, time, totalAmount);
+  if (time.value == "") {
+    var minutes = d.getMinutes();
+    minutes = minutes > 9 ? minutes : "0" + minutes;
+
+    time.value = d.getHours() + ":" + minutes;
+  }
+  if (item.value == "" || date.value == "" || totalAmount.value == "") {
+    return false;
+  } else {
+    generatingPaymentTable(item, date, time, totalAmount);
+  }
 }
 const generatingPaymentTable = (item, date, time, totalAmount) => {
   // console.log("Trying Arrow Functions");
